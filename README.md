@@ -1,6 +1,6 @@
 # People-Analytics-Challenge
 
-Projeto desenvolvido como participação do desafio People Analytics, promovido pela comunidade de dados **Data Vinking**.
+Data analysis project developed as part of the People Analytics challenge, promoted by the **[Data Vinking](https://www.dataviking.com.br/)** data community.
 
 Team Members:
 - Lucas Pontes *[profile](https://www.linkedin.com/in/lucasdpontes/)*
@@ -8,43 +8,46 @@ Team Members:
 
 <br><br><h1 align="center">Introdução</h1>
 
-Este estudo analisa uma base de dados de Recursos Humanos para compreender a alta rotatividade de funcionários em uma empresa. Ao longo da análise, exploramos diferentes aspectos relacionados à permanência dos funcionários na empresa.
+This study conducted analyzes of a Human Resources database to understand the high employee turnover in a company.
 
-Dor do Negócio
-- Altos custos de contratação e desligamento
-- Baixa retenção impacta nos projetos em andamento e altas curvas de aprendizado
-- Gastos com treinamentos
+Throughout the analysis, different aspects related to the permanence of employees at a Software House company were explored.
 
-<br><br><h1 align="center">Análises</h1>
+Business Pain
+- High hiring and resign costs
+- Low retention impacts ongoing projects and learning curves
+- Training expenses
 
-## Tempo médio de permanência
+<br><br><h1 align="center">Analysis</h1>
 
-Primeiramente, examinamos o tempo médio de permanência dos colaboradores, oferecendo uma visão geral da estabilidade do quadro de funcionários ao longo do tempo.
+## Average length of stay
+
+Firstly, the average length of stay of employees was examined, offering an overview of the stability of the workforce over time.
 
 ```mermaid
 ---
-title: Tempo médio de permaência
+title: Average length of stay
 ---
 flowchart LR
-    id1([17.5 meses])
+    id1([17.5 months])
 ```
 
-## Ciclos de rotatividade
+## Turnover Cycles
 
-Em seguida, identificamos ciclos de rotatividade, destacando períodos específicos em que ocorreram picos de saída de funcionários.
+Then, turnover cycles were identified, according the chart below, to highlight specific periods in which there were spikes in employee departures from the company.
 
 <br><p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/historico_contratacao.PNG?raw=true"></p>
 
-Com base no histórico de contratações, houve uma alta desse valor no 4º trimestre de 2023.
-No segundo trimestre desse ano, especificamente em 14/05/2024, houveram 144 desligamentos, indicando um possível cenário de Layoff.
+Based on the hiring history, this value was increased in the 4th quarter of 2023.
 
-## Perfil de risco
+In the second quarter of 2024, specifically on March 15, there were 144 layoffs, indicating a **possible mass layoff** scenario.
 
-Além disso, investigamos o perfil de risco dos funcionários, comparando funcionários desligados com os não desligados para entender se alta satisfação ou alto desempenho estavam diretamente relacionados a esses desligamentos.
+## Risk profile
+
+In addition, the risk profile of employees was investigated, comparing those who left the company with those who stayed to understand whether higher satisfaction or performance were directly related to these departures.
 
 ## Correlations
 
-Também realizamos análises estatísticas para identificar correlações entre as variáveis da base de dados, buscando compreender melhor os fatores subjacentes à alta rotatividade.
+Statistical analyzes were also carried out to identify correlations between the variables in the database, seeking to better understand the factors underlying high turnover.
 
 ```mermaid
 flowchart LR
@@ -53,11 +56,11 @@ flowchart LR
 
 <p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/heatmap.PNG?raw=true"></p>
 
-## Funcionários com 02 anos
+## mployees with 2+ years at the company
 
-Por fim, comparamos os funcionários com até 2 anos de empresa e aqueles com mais de 2 anos, buscamos identificar possíveis discrepâncias que possam fornecer insights adicionais sobre a retenção de talentos.
+Finally, employees with up to 2 years at the company were compared with those with 2+ years, seeking to identify possible discrepancies that could provide additional insights about retention.
 
-<br><br><h1 align="center">Conclusões</h1>
+<br><br><h1 align="center">Conclusions</h1>
 
 Após analisar o perfil dos funcionários desligados e não desligados, observamos que todos os funcionários foram desligados no mesmo dia, sugerindo uma ação coletiva ou uma decisão organizacional em massa. Além disso, constatamos que a satisfação média dos funcionários desligados era significativamente menor do que a dos funcionários não desligados, indicando uma possível relação entre insatisfação e saída da empresa.
 
