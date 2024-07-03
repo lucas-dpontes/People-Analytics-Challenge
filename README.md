@@ -4,9 +4,9 @@ Data analysis project developed as part of the People Analytics challenge, promo
 
 Team Members:
 - Lucas Pontes *[profile](https://www.linkedin.com/in/lucasdpontes/)*
-- Pedro Borges: https*[profile](https://www.linkedin.com/in/pedrogborges/)*
+- Pedro Borges *[profile](https://www.linkedin.com/in/pedrogborges/)*
 
-<br><br><h1 align="center">Introdução</h1>
+<br><br><h1 align="center">Intro</h1>
 
 This study conducted analyzes of a Human Resources database to understand the high employee turnover in a company.
 
@@ -56,7 +56,7 @@ flowchart LR
 
 <p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/heatmap.PNG?raw=true"></p>
 
-## mployees with 2+ years at the company
+## Employees with 2+ years at the company
 
 Finally, employees with up to 2 years at the company were compared with those with 2+ years, seeking to identify possible discrepancies that could provide additional insights about retention.
 
