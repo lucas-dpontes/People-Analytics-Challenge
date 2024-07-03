@@ -142,7 +142,7 @@ plt.show()
 | **Avg performance (0-5)** | 2.94 | 3.32 |
 | **Avg satisfaction (0-5)** | 2.96 | 2.89 |
 
-<br><p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/avg_satisfaction_performance.PNG?raw=true"></p>
+<br><p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/avg_satisfaction_performance_work.PNG?raw=true"></p>
 
 ## Correlations
 
