@@ -1,7 +1,6 @@
 # People-Analytics-Challenge
 
-
-## Introdução
+<br><br><h1 align="center">Introdução</h1>
 
 Este estudo se concentra na análise de uma base de dados de Recursos Humanos para compreender a alta rotatividade de funcionários em uma organização. Ao longo da análise, exploramos diferentes aspectos relacionados à permanência dos funcionários na empresa.
 
@@ -19,7 +18,7 @@ Lucas Pontes: https://www.linkedin.com/in/lucasdpontes/
 Pedro Borges: https://www.linkedin.com/in/pedrogborges/
 
 
-## Conclusões iniciais
+<br><br><h1 align="center">Conclusões iniciais</h1>
 
 O tempo médio de permaência foi de 17,5 meses.
 
@@ -29,9 +28,9 @@ No segundo trimestre desse ano, especificamente em 14/05/2024, houveram 144 desl
 
 Foi identificada alta correlação entre a idade e salário dos funcionários.
 
-## Conclusões
+<br><br><h1 align="center">Conclusões</h1>
 
-Após analisar o perfil dos funcionários desligados e não desligados, observamos que todos os funcionários foram desligados no mesmo dia, o que sugere uma ação coletiva ou uma decisão organizacional em massa. Além disso, constatamos que a satisfação média dos funcionários desligados era significativamente menor do que a dos funcionários não desligados, indicando uma possível relação entre insatisfação e saída da empresa.
+Após analisar o perfil dos funcionários desligados e não desligados, observamos que todos os funcionários foram desligados no mesmo dia, sugerindo uma ação coletiva ou uma decisão organizacional em massa. Além disso, constatamos que a satisfação média dos funcionários desligados era significativamente menor do que a dos funcionários não desligados, indicando uma possível relação entre insatisfação e saída da empresa.
 
 Surpreendentemente, descobrimos que o desempenho dos funcionários desligados era, em média, maior do que o dos funcionários não desligados. Isso pode sugerir que outros fatores, além do desempenho no trabalho, estão contribuindo para a rotatividade de pessoal, como questões de cultura organizacional, falta de oportunidades de crescimento ou desalinhamento de expectativas.
 
