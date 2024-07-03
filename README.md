@@ -4,12 +4,19 @@
 
 Este estudo analisa uma base de dados de Recursos Humanos para compreender a alta rotatividade de funcionários em uma empresa. Ao longo da análise, exploramos diferentes aspectos relacionados à permanência dos funcionários na empresa.
 
-Tempo médio de permaência = 17,5 meses.
-
 Primeiramente, examinamos o tempo médio de permanência dos colaboradores, oferecendo uma visão geral da estabilidade do quadro de funcionários ao longo do tempo.
 
+```mermaid
+---
+title: Tempo médio de permaência
+---
+flowchart LR
+    id1([17.5 meses])
+```
 
 Em seguida, identificamos ciclos de rotatividade, destacando períodos específicos em que ocorreram picos de saída de funcionários.
+
+<br><p align="center"><img src="https://github.com/lucas-dpontes/le-wagon-final-project/blob/main/churner_age.png?raw=true"></p>
 
 Além disso, investigamos o perfil de risco dos funcionários, comparando funcionários desligados com os não desligados para entender se alta satisfação ou alto desempenho estavam diretamente relacionados a esses desligamentos.
 
