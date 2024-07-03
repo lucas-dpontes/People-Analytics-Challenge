@@ -27,7 +27,7 @@ perc = df.Nivel_Cargo.value_counts(normalize=True)
 pd.concat([count,perc], axis=1, keys=['Valor', 'Percentagem'])
 ```
 
-| Position | % |
+| Position | Percentage |
 |:-:|:-:|
 | Junior | 35.9  |
 | Full | 34.6  |
@@ -46,18 +46,31 @@ tempo_medio_permanencia
 ```
 
 ```mermaid
----
-title: Average length of stay
----
 flowchart LR
-    id1([17.5 months])
+    id1([Avg length of stay = 17.5 months])
 ```
 
 ## Turnover Cycles
 
 Then, turnover cycles were identified, according the chart below, to highlight specific periods in which there were spikes in employee departures from the company.
 
-<br><p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/historico_contratacao.PNG?raw=true"></p>
+```
+# Variables creation
+datas_contratacao = df_desligados['Data_Contratacao'].value_counts().reset_index()
+datas_contratacao.columns = ['Data_Contratacao', 'Contagem']
+
+# Sorting date
+datas_contratacao = datas_contratacao.sort_values(by=['Data_Contratacao'], ascending=True)
+
+# Plotting
+fig = px.line(datas_contratacao, x='Data_Contratacao', y='Contagem', markers = True, title='Histórico de contratações',
+              labels={'Data_Contratacao': 'Data de contratação', 'Contagem': 'Quantidade'}, text='Contagem',
+              width=800, height=450)
+fig.update_traces(textposition='top center')
+fig.show()
+```
+
+<br><p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/hiring_chart.PNG?raw=true"></p>
 
 Based on the hiring history, this value was increased in the 4th quarter of 2023.
 
@@ -67,9 +80,32 @@ In the second quarter of 2024, specifically on March 15, there were 144 layoffs,
 
 In addition, the risk profile of employees was investigated, comparing those who left the company with those who stayed to understand whether higher satisfaction or performance were directly related to these departures.
 
+```
+# Average performance and satisfaction
+
+pivot = pd.pivot_table(df[['Pontuacao_Desempenho','Satisfacao_Trabalho','Desligamento']],
+                       values=['Pontuacao_Desempenho','Satisfacao_Trabalho'],
+                       index=None, columns=['Desligamento'], aggfunc='mean',
+                       dropna=True, margins_name='All')
+
+pivot = pivot.rename(index={'Pontuacao_Desempenho': 'Avg performance', 'Satisfacao_Trabalho': 'Avg satisfaction'},
+                     columns={0: 'Former employee', 1: 'Current employee'})
+pivot_desempenho_satisfacao = pivot.round(2)
+pivot_desempenho_satisfacao
+```
+
+| | Former employee | Current employee |
+|:-:|:-:|:-:|
+| **Avg performance (0-5)** | 2.94 | 3.32 |
+| **Avg satisfaction (0-5)** | 2.96 | 2.89 |
+
 ## Correlations
 
 Statistical analyzes were also carried out to identify correlations between the variables in the database, seeking to better understand the factors underlying high turnover.
+
+```
+sns.heatmap(df.select_dtypes(include=['number']).corr(), annot=True, linewidth=.5, fmt=".2f", cmap="crest")
+```
 
 ```mermaid
 flowchart LR
@@ -81,6 +117,42 @@ flowchart LR
 ## Employees with 2+ years at the company
 
 Finally, employees with up to 2 years at the company were compared with those with 2+ years, seeking to identify possible discrepancies that could provide additional insights about retention.
+
+```
+# Flag for employees with 2+ years and less than 2 years
+df['Mais_de_2_anos'] = 0
+df.loc[df['Meses_de_Servico'] > 24, 'Mais_de_2_anos'] = 1
+
+nivel_cargo_salario_ate_2_anos = df[df['Mais_de_2_anos'] == 0].groupby('Nivel_Cargo')['Salario'].mean()
+nivel_cargo_salario_mais_de_2_anos = df[df['Mais_de_2_anos'] == 1].groupby('Nivel_Cargo')['Salario'].mean()
+
+# Para garantir que os dataframes possuam os mesmos níveis de cargo, caso esteja ausente em algum dos grupos
+nivel_cargos = set(nivel_cargo_salario_ate_2_anos.index).union(set(nivel_cargo_salario_mais_de_2_anos.index))
+nivel_cargo_salario_ate_2_anos = nivel_cargo_salario_ate_2_anos.reindex(nivel_cargos, fill_value=0)
+nivel_cargo_salario_mais_de_2_anos = nivel_cargo_salario_mais_de_2_anos.reindex(nivel_cargos, fill_value=0)
+
+# Plotagem
+labels = nivel_cargos
+medias_ate_2_anos = nivel_cargo_salario_ate_2_anos.values
+medias_mais_de_2_anos = nivel_cargo_salario_mais_de_2_anos.values
+
+x = np.arange(len(labels))
+width = 0.35
+
+fig, ax = plt.subplots(figsize=(4, 4))
+rects1 = ax.bar(x - width/2, medias_ate_2_anos, width, label='Até 2 Anos', color='blue', alpha=0.7)
+rects2 = ax.bar(x + width/2, medias_mais_de_2_anos, width, label='Mais de 2 Anos', color='green', alpha=0.7)
+
+ax.set_xlabel('Cargo')
+ax.set_ylabel('Salário médio')
+ax.set_title('Salário médio por cargo')
+ax.set_xticks(x)
+ax.set_xticklabels(labels, rotation=45)
+ax.legend()
+
+plt.tight_layout()
+plt.show()
+```
 
 <br><br><h1 align="center">Conclusions</h1>
 
