@@ -19,9 +19,31 @@ Business Pain
 
 <br><br><h1 align="center">Analysis</h1>
 
+## Positions distribution
+
+```
+count = df.Nivel_Cargo.value_counts()
+perc = df.Nivel_Cargo.value_counts(normalize=True)
+pd.concat([count,perc], axis=1, keys=['Valor', 'Percentagem'])
+```
+
+| Position | % |
+|:-:|:-:|
+| Junior | 35.9  |
+| Full | 34.6  |
+| Senior | 29.5  |
+
+
 ## Average length of stay
 
 Firstly, the average length of stay of employees was examined, offering an overview of the stability of the workforce over time.
+
+```
+df_desligados = df.loc[~df['Data_Desligamento'].isnull()]
+
+tempo_medio_permanencia = round(df_desligados['Meses_de_Servico'].mean(),2)
+tempo_medio_permanencia
+```
 
 ```mermaid
 ---
