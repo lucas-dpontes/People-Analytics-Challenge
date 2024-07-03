@@ -2,9 +2,14 @@
 
 <br><br><h1 align="center">Introdução</h1>
 
-Este estudo se concentra na análise de uma base de dados de Recursos Humanos para compreender a alta rotatividade de funcionários em uma organização. Ao longo da análise, exploramos diferentes aspectos relacionados à permanência dos funcionários na empresa.
+Este estudo analisa uma base de dados de Recursos Humanos para compreender a alta rotatividade de funcionários em uma empresa. Ao longo da análise, exploramos diferentes aspectos relacionados à permanência dos funcionários na empresa.
 
-Primeiramente, examinamos o tempo médio de permanência dos colaboradores, oferecendo uma visão geral da estabilidade do quadro de funcionários ao longo do tempo. Em seguida, identificamos ciclos de rotatividade, destacando períodos específicos em que ocorreram picos de saída de funcionários.
+Tempo médio de permaência = 17,5 meses.
+
+Primeiramente, examinamos o tempo médio de permanência dos colaboradores, oferecendo uma visão geral da estabilidade do quadro de funcionários ao longo do tempo.
+
+
+Em seguida, identificamos ciclos de rotatividade, destacando períodos específicos em que ocorreram picos de saída de funcionários.
 
 Além disso, investigamos o perfil de risco dos funcionários, comparando funcionários desligados com os não desligados para entender se alta satisfação ou alto desempenho estavam diretamente relacionados a esses desligamentos.
 
