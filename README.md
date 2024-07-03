@@ -46,7 +46,12 @@ Além disso, investigamos o perfil de risco dos funcionários, comparando funcio
 
 Também realizamos análises estatísticas para identificar correlações entre as variáveis da base de dados, buscando compreender melhor os fatores subjacentes à alta rotatividade.
 
-Alta correlação entre a idade e salário dos funcionários.
+```mermaid
+flowchart LR
+    id1(Encontrada alta correlação entre a idade e salário dos funcionários)
+```
+
+<p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/heatmap.PNG?raw=true"></p>
 
 ## Funcionários com 02 anos
 
