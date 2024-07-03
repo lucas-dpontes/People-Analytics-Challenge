@@ -1,5 +1,14 @@
 # People-Analytics-Challenge
 
+<details>
+  <summary>Code</summary>
+  
+```
+code
+```
+</details>
+
+
 Data analysis project developed as part of the People Analytics challenge, promoted by the **[Data Vinking](https://www.dataviking.com.br/)** data community.
 
 Team Members:
@@ -21,11 +30,15 @@ Business Pain
 
 ## Positions distribution
 
+<details>
+  <summary>Code</summary>
+  
 ```
 count = df.Nivel_Cargo.value_counts()
 perc = df.Nivel_Cargo.value_counts(normalize=True)
 pd.concat([count,perc], axis=1, keys=['Valor', 'Percentagem'])
 ```
+</details>
 
 | Position | Percentage |
 |:-:|:-:|
@@ -38,12 +51,17 @@ pd.concat([count,perc], axis=1, keys=['Valor', 'Percentagem'])
 
 Firstly, the average length of stay of employees was examined, offering an overview of the stability of the workforce over time.
 
+<details>
+  <summary>Code</summary>
+  
 ```
 df_desligados = df.loc[~df['Data_Desligamento'].isnull()]
 
 tempo_medio_permanencia = round(df_desligados['Meses_de_Servico'].mean(),2)
 tempo_medio_permanencia
+
 ```
+</details>
 
 ```mermaid
 flowchart LR
@@ -54,6 +72,9 @@ flowchart LR
 
 Then, turnover cycles were identified, according the chart below, to highlight specific periods in which there were spikes in employee departures from the company.
 
+<details>
+  <summary>Code</summary>
+  
 ```
 # Variables creation
 datas_contratacao = df_desligados['Data_Contratacao'].value_counts().reset_index()
@@ -69,6 +90,7 @@ fig = px.line(datas_contratacao, x='Data_Contratacao', y='Contagem', markers = T
 fig.update_traces(textposition='top center')
 fig.show()
 ```
+</details>
 
 <br><p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/hiring_chart.PNG?raw=true"></p>
 
@@ -80,32 +102,59 @@ In the second quarter of 2024, specifically on March 15, there were 144 layoffs,
 
 In addition, the risk profile of employees was investigated, comparing those who left the company with those who stayed to understand whether higher satisfaction or performance were directly related to these departures.
 
+<details>
+  <summary>Code</summary>
+  
 ```
-# Average performance and satisfaction
+# Dataframe creation
+data = pd.melt(df.replace({'Desligamento': {0: 'Current employee', 1: 'Former employee'}}), 
+               id_vars=['Desligamento'], 
+               value_vars=['Satisfacao_Trabalho', 'Pontuacao_Desempenho'],
+               var_name='Variavel', value_name='Valor')
 
-pivot = pd.pivot_table(df[['Pontuacao_Desempenho','Satisfacao_Trabalho','Desligamento']],
-                       values=['Pontuacao_Desempenho','Satisfacao_Trabalho'],
-                       index=None, columns=['Desligamento'], aggfunc='mean',
-                       dropna=True, margins_name='All')
+data['Variavel'] = data['Variavel'].map({'Satisfacao_Trabalho': 'Satisfaction', 'Pontuacao_Desempenho': 'Performance'})
 
-pivot = pivot.rename(index={'Pontuacao_Desempenho': 'Avg performance', 'Satisfacao_Trabalho': 'Avg satisfaction'},
-                     columns={0: 'Former employee', 1: 'Current employee'})
-pivot_desempenho_satisfacao = pivot.round(2)
-pivot_desempenho_satisfacao
+plt.figure(figsize=(12, 6))
+
+# Combining plotting
+sns.boxplot(x='Desligamento', y='Valor', hue='Variavel', data=data, palette='Set3')
+
+# Adjustments
+plt.title('Average satisfaction & performance at work')
+plt.xlabel('')
+plt.ylabel('Score')
+plt.legend(title='', loc='best')
+
+# Adding values into boxplots
+for tick in plt.gca().get_xticks():
+    for i, var in enumerate(['Satisfaction', 'Performance']):
+        subset = data[(data['Desligamento'] == data['Desligamento'].unique()[tick]) & (data['Variavel'] == var)]
+        values = subset['Valor']
+        plt.annotate(f"{values.mean():.2f}", xy=(tick + (i - 0.5) * 0.4, values.mean()), xycoords='data',
+                     ha='center', va='center', bbox=dict(boxstyle="round,pad=0.3", fc="white", ec="black"))
+
+plt.show()
 ```
+</details>
 
 | | Former employee | Current employee |
 |:-:|:-:|:-:|
 | **Avg performance (0-5)** | 2.94 | 3.32 |
 | **Avg satisfaction (0-5)** | 2.96 | 2.89 |
 
+<br><p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/avg_satisfaction_performance.PNG?raw=true"></p>
+
 ## Correlations
 
 Statistical analyzes were also carried out to identify correlations between the variables in the database, seeking to better understand the factors underlying high turnover.
 
+<details>
+  <summary>Code</summary>
+
 ```
 sns.heatmap(df.select_dtypes(include=['number']).corr(), annot=True, linewidth=.5, fmt=".2f", cmap="crest")
 ```
+</details>
 
 ```mermaid
 flowchart LR
@@ -118,6 +167,9 @@ flowchart LR
 
 Finally, employees with up to 2 years at the company were compared with those with 2+ years, seeking to identify possible discrepancies that could provide additional insights about retention.
 
+<details>
+  <summary>Code</summary>
+  
 ```
 # Flag for employees with 2+ years and less than 2 years
 df['Mais_de_2_anos'] = 0
@@ -152,7 +204,9 @@ ax.legend()
 
 plt.tight_layout()
 plt.show()
+
 ```
+</details>
 
 <br><br><h1 align="center">Conclusions</h1>
 
