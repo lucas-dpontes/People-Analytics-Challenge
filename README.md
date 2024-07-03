@@ -16,7 +16,7 @@ flowchart LR
 
 Em seguida, identificamos ciclos de rotatividade, destacando períodos específicos em que ocorreram picos de saída de funcionários.
 
-<br><p align="center"><img src="https://github.com/lucas-dpontes/le-wagon-final-project/blob/main/churner_age.png?raw=true"></p>
+<br><p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/historico_contratacao.PNG?raw=true"></p>
 
 Além disso, investigamos o perfil de risco dos funcionários, comparando funcionários desligados com os não desligados para entender se alta satisfação ou alto desempenho estavam diretamente relacionados a esses desligamentos.
 
