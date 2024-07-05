@@ -108,7 +108,14 @@ In the second quarter of 2024, specifically on March 15, there were 144 layoffs,
 
 In addition, the risk profile of employees was investigated, comparing those who left the company with those who stayed to understand whether higher satisfaction or performance were directly related to these departures.
 
-<details>
+
+
+| | Former employee | Current employee |
+|:-:|:-:|:-:|
+| **Avg performance (0-5)** | 2.94 | 3.32 |
+| **Avg satisfaction (0-5)** | 2.96 | 2.89 |
+
+<br><details>
   <summary>Code</summary>
   
 ```
@@ -143,12 +150,7 @@ plt.show()
 ```
 </details>
 
-| | Former employee | Current employee |
-|:-:|:-:|:-:|
-| **Avg performance (0-5)** | 2.94 | 3.32 |
-| **Avg satisfaction (0-5)** | 2.96 | 2.89 |
-
-<br><p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/avg_satisfaction_performance_work.PNG?raw=true"></p>
+<p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/avg_satisfaction_performance_work.PNG?raw=true"></p><br>
 
 <details>
   <summary>Code</summary>
@@ -179,7 +181,7 @@ plt.show()
 ```
 </details>
 
-<br><p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/avg_satisfaction.PNG?raw=true"></p>
+<p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/avg_satisfaction.png?raw=true"></p><br>
 
 <details>
   <summary>Code</summary>
@@ -211,7 +213,7 @@ plt.show()
 ```
 </details>
 
-<br><p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/avg_performance.png?raw=true"></p>
+<p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/avg_performance.png?raw=true"></p><br>
 
 ## Correlations
 
