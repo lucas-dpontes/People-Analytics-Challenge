@@ -28,7 +28,7 @@ Business Pain
 
 <br><br><h1 align="center">Analysis</h1>
 
-## Positions distribution
+## Distribution of positions
 
 <details>
   <summary>Code</summary>
@@ -71,6 +71,8 @@ flowchart LR
 ## Turnover Cycles
 
 Then, turnover cycles were identified, according the chart below, to highlight specific periods in which there were spikes in employee departures from the company.
+
+**according to available data, turnover cycles were analyzed based on the hiring date.*
 
 <details>
   <summary>Code</summary>
@@ -158,7 +160,7 @@ sns.heatmap(df.select_dtypes(include=['number']).corr(), annot=True, linewidth=.
 
 ```mermaid
 flowchart LR
-    id1(Encontrada alta correlação entre a idade e salário dos funcionários)
+    id1(High correlation found between employee age and salary)
 ```
 
 <p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/heatmap.PNG?raw=true"></p>
