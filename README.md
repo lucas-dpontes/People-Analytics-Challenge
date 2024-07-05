@@ -150,6 +150,37 @@ plt.show()
 
 <br><p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/avg_satisfaction_performance_work.PNG?raw=true"></p>
 
+<details>
+  <summary>Code</summary>
+
+  ```
+  # Dataframe creation
+data = pd.melt(df.replace({'Desligamento': {0: 'Current employee', 1: 'Former employee'}}),
+               id_vars=['Desligamento', 'Nivel_Cargo'],
+               value_vars=['Satisfacao_Trabalho'],
+               var_name='Variavel', value_name='Valor')
+
+data['Variavel'] = data['Variavel'].map({'Satisfacao_Trabalho': 'Satisfação'})
+
+plt.figure(figsize=(12, 6))
+
+# Combined plotting
+sns.boxplot(x='Desligamento', y='Valor', hue='Nivel_Cargo', data=data, palette='Set3')
+
+# Settings
+plt.title('Average job satisfaction x Position')
+plt.legend(title='Nivel_Cargo', bbox_to_anchor=(1.05, 1), loc='upper left')
+plt.tight_layout()
+plt.xlabel('')
+plt.ylabel('Score')
+plt.legend(title='', loc='best')
+
+plt.show()
+```
+</details>
+
+<br><p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/avg_satisfaction.PNG?raw=true"></p>
+
 ## Correlations
 
 Statistical analyzes were also carried out to identify correlations between the variables in the database, seeking to better understand the factors underlying high turnover.
