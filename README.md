@@ -15,6 +15,10 @@ Team Members:
 - Lucas Pontes *[profile](https://www.linkedin.com/in/lucasdpontes/)*
 - Pedro Borges *[profile](https://www.linkedin.com/in/pedrogborges/)*
 
+**Python libraries used:**
+
+<img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/matplotlib-logo.png" width=50> <img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/numpy-logo.png" width=120> <img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/pandas-logo.png" width=150> <img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/logo-google-collab.png" width=45> <img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/seaborn-logo.png" width=40> <img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/plotly-logo.png" width=140>
+
 <br><br><h1 align="center">Intro</h1>
 
 This study conducted analyzes of a Human Resources database to understand the high employee turnover in a company.
