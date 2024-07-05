@@ -108,8 +108,6 @@ In the second quarter of 2024, specifically on March 15, there were 144 layoffs,
 
 In addition, the risk profile of employees was investigated, comparing those who left the company with those who stayed to understand whether higher satisfaction or performance were directly related to these departures.
 
-
-
 | | Former employee | Current employee |
 |:-:|:-:|:-:|
 | **Avg performance (0-5)** | 2.94 | 3.32 |
@@ -150,7 +148,7 @@ plt.show()
 ```
 </details>
 
-<p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/avg_satisfaction_performance_work.PNG?raw=true"></p><br>
+<p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/avg_satisfaction_performance_work.PNG?raw=true" width=700></p><br>
 
 <details>
   <summary>Code</summary>
@@ -181,7 +179,7 @@ plt.show()
 ```
 </details>
 
-<p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/avg_satisfaction.png?raw=true"></p><br>
+<p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/avg_satisfaction.png?raw=true" width=700></p><br>
 
 <details>
   <summary>Code</summary>
@@ -208,12 +206,47 @@ plt.xlabel('')
 plt.ylabel('Score')
 plt.legend(title='', loc='best')
 
+plt.show()
+```
+</details>
+
+<p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/avg_performance.png?raw=true" width=700></p><br>
+
+
+<details>
+  <summary>Code</summary>
+
+  ```
+# Dataframe creation
+data = pd.melt(df.replace({'Desligamento': {0: 'Current employee', 1: 'Former employee'}}),
+               id_vars=['Desligamento', 'Nivel_Cargo'],
+               value_vars=['Salario'],
+               var_name='Variavel', value_name='Valor')
+
+
+plt.figure(figsize=(12, 6))
+
+# Combined plotting
+sns.boxplot(x='Desligamento', y='Valor', hue='Nivel_Cargo', data=data, palette='Set3')
+
+# Settings
+plt.title('Salary x Position')
+plt.legend(title='Nivel_Cargo', bbox_to_anchor=(1.05, 1), loc='upper left')
+plt.tight_layout()
+plt.xlabel('')
+plt.ylabel('Value')
+plt.legend(title='', loc='best')
 
 plt.show()
 ```
 </details>
 
-<p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/avg_performance.png?raw=true"></p><br>
+<p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/salary-position.png?raw=true" width=700></p><br>
+
+According to the boxplot views above:
+- There is no significant difference between the salaries of former and current employees, regardless of position;
+- Also regardless of position, people with higher performance are formers;
+- Senior people with lower satisfaction tend to leave their jobs, probably because they found better opportunities.
 
 ## Correlations
 
