@@ -17,7 +17,7 @@ Team Members:
 
 **Python libraries used:**
 
-<img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/matplotlib-logo.png" width=50> <img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/numpy-logo.png" width=120> <img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/pandas-logo.png" width=150> <img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/logo-google-collab.png" width=45> <img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/seaborn-logo.png" width=40> <img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/plotly-logo.png" width=140>
+<img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/logo-matplotlib.png" width=170> <img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/numpy-logo.png" width=120> <img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/pandas-logo.png" width=150> <img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/logo-google-collab.png" width=80> <img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/seaborn-logo.png" width=40> <img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/plotly-logo.png" width=140>
 
 <br><br><h1 align="center">Intro</h1>
 
