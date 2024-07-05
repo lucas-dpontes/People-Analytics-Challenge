@@ -265,7 +265,7 @@ flowchart LR
     id1(High correlation found between employee age and salary)
 ```
 
-<p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/heatmap.PNG?raw=true"></p>
+<p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/heatmap-corr.png?raw=true"></p>
 
 ## Employees with 2+ years at the company
 
