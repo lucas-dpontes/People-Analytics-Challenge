@@ -44,12 +44,15 @@ pd.concat([count,perc], axis=1, keys=['Valor', 'Percentagem'])
 ```
 </details>
 
+<div align="center">
+
 | Position | Percentage |
 |:-:|:-:|
 | Junior | 35.9  |
 | Full | 34.6  |
 | Senior | 29.5  |
 
+</div>
 
 ## Average length of stay
 
@@ -107,10 +110,14 @@ In the second quarter of 2024, specifically on March 15, there were 144 layoffs,
 
 In addition, the risk profile of employees was investigated, comparing those who left the company with those who stayed to understand whether higher satisfaction or performance were directly related to these departures.
 
+<div align="center">
+
 | | Former employee | Current employee |
 |:-:|:-:|:-:|
 | **Avg performance (0-5)** | 2.94 | 3.32 |
 | **Avg satisfaction (0-5)** | 2.96 | 2.89 |
+
+</div>
 
 <br><details>
   <summary>Code</summary>
@@ -355,17 +362,36 @@ plt.tight_layout()
   <summary>Code</summary>
   
 ```
+pivot = pd.pivot_table(df[['Pontuacao_Desempenho','Satisfacao_Trabalho','Horas_Extras', 'Mais_de_2_anos']],
+                       values=['Pontuacao_Desempenho','Satisfacao_Trabalho','Horas_Extras'],
+                       index=None, columns=['Mais_de_2_anos'], aggfunc='mean',
+                       dropna=True, margins_name='All')
 
+pivot = pivot.rename(index={'Pontuacao_Desempenho': 'Avg performance', 'Satisfacao_Trabalho': 'Avg satisfaction', 'Horas_Extras': 'Avg overtime'},
+                     columns={0: 'até 2 anos', 1: '+ de 2 anos'})
+
+pivot.round(2)
 ```
 </details>
 
-<p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/xxx.png?raw=true" width=300></p><br>
+<div align="center">
+  
+| | Until 2 years | 2 years + |
+|:-:|:-:|:-:|
+| **Avg overtime hours** | 10.00 | 10.29 |
+| **Avg performance (0-5)** | 3.05 | 2.99 |
+| **Avg satisfaction (0-5)** | 2.93 | 2.96 |
 
+</div>
 
 <br><br><h1 align="center">Conclusions</h1>
 
-Após analisar o perfil dos funcionários desligados e não desligados, observamos que todos os funcionários foram desligados no mesmo dia, sugerindo uma ação coletiva ou uma decisão organizacional em massa. Além disso, constatamos que a satisfação média dos funcionários desligados era significativamente menor do que a dos funcionários não desligados, indicando uma possível relação entre insatisfação e saída da empresa.
+After analyzing the profile of former and current employees, it was observed that all former employees left the company on the same day, indicating a collective action or a mass organizational decision. Furthermore, it was found that the average satisfaction of former employees was significantly lower than that of current ones, reducing a possible relationship between dissatisfaction and leaving the company.
 
-Surpreendentemente, descobrimos que o desempenho dos funcionários desligados era, em média, maior do que o dos funcionários não desligados. Isso pode sugerir que outros fatores, além do desempenho no trabalho, estão contribuindo para a rotatividade de pessoal, como questões de cultura organizacional, falta de oportunidades de crescimento ou desalinhamento de expectativas.
+Surprisingly, it was found that the performance of formers, on average, higher than that of currents. This may suggest that factors other than job performance are contributing to staff turnover, such as organizational culture issues, lack of growth opportunities, or misalignment of expectations.
 
-Essas descobertas ressaltam a importância de uma abordagem multidisciplinar para a retenção de talentos, que leve em consideração não apenas o desempenho individual, mas também o engajamento, a satisfação e o bem-estar dos funcionários. Ao abordar esses aspectos, as organizações podem criar um ambiente de trabalho mais positivo e motivador, reduzindo assim a rotatividade de funcionários e promovendo a retenção de talentos de forma eficaz.
+It was identified that the proportion of employees with more than 2 years is significantly higher than the opposite.
+
+These findings highlights the importance of a multidisciplinary approach to talent retention that takes into account not only individual performance, but also employee engagement, satisfaction and well-being. By addressing these aspects, organizations can create a more positive and motivating work environment, thus reducing employee turnover and promoting a effective retention.
+
+For future steps, it is suggested to interview former and current employees.
