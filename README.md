@@ -275,42 +275,93 @@ Finally, employees with up to 2 years at the company were compared with those wi
   <summary>Code</summary>
   
 ```
-# Flag for employees with 2+ years and less than 2 years
+# Flag for employees over 2 years old
 df['Mais_de_2_anos'] = 0
 df.loc[df['Meses_de_Servico'] > 24, 'Mais_de_2_anos'] = 1
 
-nivel_cargo_salario_ate_2_anos = df[df['Mais_de_2_anos'] == 0].groupby('Nivel_Cargo')['Salario'].mean()
-nivel_cargo_salario_mais_de_2_anos = df[df['Mais_de_2_anos'] == 1].groupby('Nivel_Cargo')['Salario'].mean()
+# Dataset creation
+data = pd.melt(df.replace({'Mais_de_2_anos': {0: 'until 2 yrs', 1: 'more than 2 yrs'}}),
+               id_vars=['Desligamento', 'Nivel_Cargo', 'Mais_de_2_anos'],
+               value_vars=['Salario'],
+               var_name='Variavel', value_name='Valor')
 
-# Para garantir que os dataframes possuam os mesmos níveis de cargo, caso esteja ausente em algum dos grupos
-nivel_cargos = set(nivel_cargo_salario_ate_2_anos.index).union(set(nivel_cargo_salario_mais_de_2_anos.index))
-nivel_cargo_salario_ate_2_anos = nivel_cargo_salario_ate_2_anos.reindex(nivel_cargos, fill_value=0)
-nivel_cargo_salario_mais_de_2_anos = nivel_cargo_salario_mais_de_2_anos.reindex(nivel_cargos, fill_value=0)
+sns.barplot(data, x='Nivel_Cargo', y='Valor', hue='Mais_de_2_anos', errorbar=None, palette='tab10')
 
-# Plotagem
-labels = nivel_cargos
-medias_ate_2_anos = nivel_cargo_salario_ate_2_anos.values
-medias_mais_de_2_anos = nivel_cargo_salario_mais_de_2_anos.values
-
-x = np.arange(len(labels))
-width = 0.35
-
-fig, ax = plt.subplots(figsize=(4, 4))
-rects1 = ax.bar(x - width/2, medias_ate_2_anos, width, label='Até 2 Anos', color='blue', alpha=0.7)
-rects2 = ax.bar(x + width/2, medias_mais_de_2_anos, width, label='Mais de 2 Anos', color='green', alpha=0.7)
-
-ax.set_xlabel('Cargo')
-ax.set_ylabel('Salário médio')
-ax.set_title('Salário médio por cargo')
-ax.set_xticks(x)
-ax.set_xticklabels(labels, rotation=45)
-ax.legend()
-
+# Settings
+plt.title('Average salary x Position')
+plt.legend(title='', bbox_to_anchor=(1.05, 1), loc='upper left')
 plt.tight_layout()
+plt.xlabel('')
+plt.ylabel('Average salary')
+plt.legend(title='', loc='best')
+```
+</details>
+
+<p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/avg_salary_position.png?raw=true" width=700></p><br>
+
+<details>
+  <summary>Code</summary>
+  
+```
+# Dataframe creation
+data = pd.melt(df.replace({'Mais_de_2_anos': {0: 'until 2 yrs', 1: 'more than 2 yrs'}}),
+               id_vars=['Mais_de_2_anos'],
+               value_vars=['Meses_de_Servico'],
+               var_name='Variavel', value_name='Valor')
+
+plt.figure(figsize=(6, 5))
+
+# Plotting
+sns.boxplot(x='Mais_de_2_anos', y='Valor', hue='Mais_de_2_anos', data=data, palette='Set3')
+
+# Comparation line
+plt.axhline(24, color='gray', linestyle='--', linewidth=1)
+plt.text(0.4, 23.7, f'2 yrs', color='gray', ha='left', va='top', fontsize=10, fontweight='normal')
+
+# Settings
+plt.title('Profile x Months of service')
+plt.tight_layout()
+plt.xlabel('')
+plt.ylabel('')
+
 plt.show()
+```
+</details>
+
+<p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/profile_months.png?raw=true" width=700></p><br>
+
+<details>
+  <summary>Code</summary>
+  
+```
+# Plotting
+sns.histplot(data=df.replace({'Mais_de_2_anos': {0: 'until 2 yrs', 1: 'more than 2 yrs'}}), x='Meses_de_Servico', hue='Mais_de_2_anos', multiple='stack', palette='Set2')
+
+# Comparation line
+plt.axvline(24, color='gray', linestyle='--', linewidth=1)
+plt.text(24.2, 75, f'2 yrs', color='gray', ha='left', va='top', fontsize=10, fontweight='normal', rotation=90)
+
+# Settings
+plt.title('Profile x Months of service - histogram')
+plt.xlabel('Months of service')
+plt.ylabel('Count')
+plt.legend(title='')
+plt.tight_layout()
+```
+</details>
+
+<p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/histogram_profile_months.png?raw=true" width=700></p><br>
+
+<details>
+  <summary>Code</summary>
+  
+```
 
 ```
 </details>
+
+<p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/xxx.png?raw=true" width=700></p><br>
+
 
 <br><br><h1 align="center">Conclusions</h1>
 
