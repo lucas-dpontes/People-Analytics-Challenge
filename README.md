@@ -297,7 +297,7 @@ plt.legend(title='', loc='best')
 ```
 </details>
 
-<p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/avg_salary_position.png?raw=true" width=700></p><br>
+<p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/avg_salary_position.png?raw=true" width=500></p><br>
 
 <details>
   <summary>Code</summary>
@@ -328,7 +328,7 @@ plt.show()
 ```
 </details>
 
-<p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/profile_months.png?raw=true" width=700></p><br>
+<p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/profile_months.png?raw=true" width=500></p><br>
 
 <details>
   <summary>Code</summary>
@@ -350,7 +350,7 @@ plt.tight_layout()
 ```
 </details>
 
-<p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/histogram_profile_months.png?raw=true" width=700></p><br>
+<p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/histogram_profile_months.png?raw=true" widht=800></p><br>
 
 <details>
   <summary>Code</summary>
@@ -360,7 +360,7 @@ plt.tight_layout()
 ```
 </details>
 
-<p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/xxx.png?raw=true" width=700></p><br>
+<p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/xxx.png?raw=true" width=300></p><br>
 
 
 <br><br><h1 align="center">Conclusions</h1>
