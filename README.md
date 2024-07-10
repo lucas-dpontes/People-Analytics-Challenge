@@ -350,7 +350,7 @@ plt.tight_layout()
 ```
 </details>
 
-<p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/histogram_profile_months.png?raw=true" widht=800></p><br>
+<p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/histogram_profile_months.png?raw=true" widht=10></p><br>
 
 <details>
   <summary>Code</summary>
