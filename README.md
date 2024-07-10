@@ -297,7 +297,7 @@ plt.legend(title='', loc='best')
 ```
 </details>
 
-<p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/avg_salary_position.png?raw=true" width=500></p><br>
+<p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/avg_salary_position.png?raw=true" width=500 height=420></p><br>
 
 <details>
   <summary>Code</summary>
@@ -350,7 +350,7 @@ plt.tight_layout()
 ```
 </details>
 
-<p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/histogram_profile_months.png?raw=true" widht=10></p><br>
+<p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/histogram_profile_months.png?raw=true" width=500></p><br>
 
 <details>
   <summary>Code</summary>
