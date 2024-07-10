@@ -97,8 +97,7 @@ fig.update_traces(textposition='top center')
 fig.show()
 ```
 </details>
-
-<br><p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/hiring_chart.PNG?raw=true"></p>
+<p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/hiring_chart.PNG?raw=true"></p>
 
 Based on the hiring history, this value was increased in the 4th quarter of 2023.
 
