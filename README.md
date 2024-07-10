@@ -252,6 +252,11 @@ According to the boxplot views above:
 
 Statistical analyzes were also carried out to identify correlations between the variables in the database, seeking to better understand the factors underlying high turnover.
 
+```mermaid
+flowchart LR
+    id1(High correlation found between employee age and salary)
+```
+
 <details>
   <summary>Code</summary>
 
@@ -259,11 +264,6 @@ Statistical analyzes were also carried out to identify correlations between the 
 sns.heatmap(df.select_dtypes(include=['number']).corr(), annot=True, linewidth=.5, fmt=".2f", cmap="crest")
 ```
 </details>
-
-```mermaid
-flowchart LR
-    id1(High correlation found between employee age and salary)
-```
 
 <p align="center"><img src="https://github.com/lucas-dpontes/People-Analytics-Challenge/blob/main/heatmap-corr.png?raw=true"></p>
 
