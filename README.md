@@ -11,9 +11,7 @@ code
 
 Data analysis project developed as part of the People Analytics challenge, promoted by the **[Data Vinking](https://www.dataviking.com.br/)** data community.
 
-Team Members:
-- Lucas Pontes *[profile](https://www.linkedin.com/in/lucasdpontes/)*
-- Pedro Borges *[profile](https://www.linkedin.com/in/pedrogborges/)*
+Project developed by Lucas Pontes *[profile](https://www.linkedin.com/in/lucasdpontes/)*
 
 **Python libraries used:**
 
