@@ -25,7 +25,7 @@ Throughout the analysis, different aspects related to the permanence of employee
 
 Business Pain
 - High hiring and resign costs
-- Low retention impacts ongoing projects and learning curves
+- Low retention impacts ongoing projects and learning curves 
 - Training expenses
 
 <br><br><h1 align="center">Analysis</h1>
