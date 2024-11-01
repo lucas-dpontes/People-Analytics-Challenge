@@ -9,7 +9,7 @@ code
 </details>
 
 
-Data analysis project developed as part of the People Analytics challenge, promoted by the **[Data Vinking](https://www.dataviking.com.br/)** data community. 
+Data analysis project developed as part of the People Analytics challenge, promoted by the **[Data Vinking](https://www.dataviking.com.br/)** data community.
 
 Project developed by Lucas Pontes *[profile](https://www.linkedin.com/in/lucasdpontes/)*
 
